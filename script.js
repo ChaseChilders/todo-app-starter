@@ -6,11 +6,17 @@ console.log(todoItems);
 // the page.
 
 const incompleteTasks = document.querySelector("#incomplete-items");
+incompleteTasks.classList.add("form-check");
 const completeTasks = document.querySelector("#complete-items");
+completeTasks.classList.add("form-check");
 
 for (let items of todoItems) {
   const incompleteItems = document.createElement("li");
   const completeItems = document.createElement("li");
+  incompleteItems.classList.add("list-group-item");
+  incompleteItems.classList.add("form-check-label");
+  completeItems.classList.add("list-group-item");
+  completeItems.classList.add("form-check-label");
   if (items.completed == true) {
     completeItems.innerText = items.title;
     completeTasks.appendChild(completeItems);
@@ -22,6 +28,3 @@ for (let items of todoItems) {
 
 // incompleteItems.innerText = items;
 // incompleteTasks.appendChild(incompleteItems);
-
-incompleteTasks.classList.add("list-group-item");
-completeTasks.classList.add("list-group-item");
