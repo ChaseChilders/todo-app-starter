@@ -50,6 +50,14 @@ todoForm.addEventListener("submit", function (event) {
   listItem.appendChild(label);
   incompleteItems.appendChild(listItem);
 
+  checkbox.addEventListener("click", function (event) {
+    if (checkbox.checked) {
+      completeItems.appendChild(listItem);
+    } else {
+      incompleteItems.appendChild(listItem);
+    }
+  });
+
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "Remove";
   listItem.appendChild(deleteButton);
@@ -88,14 +96,34 @@ for (let item of todoItems) {
   deleteButton.addEventListener("click", function () {
     listItem.remove();
   });
+
+  deleteButton.classList.add("ms-5");
+
+  checkbox.addEventListener("click", function (event) {
+    if (checkbox.checked) {
+      completeItems.appendChild(listItem);
+    } else {
+      incompleteItems.appendChild(listItem);
+    }
+  });
 }
 
-//moving checked items to the Complete List
+// checkbox.addEventListener("click", function (event) {
+//   if (checkbox.checked) {
+//     completeItems.appendChild(listItem);
+//   } else {
+//     incompleteItems.appendChild(listItem);
+//   }
+// });
+
+// const checkbox = document.createElement("input");
 // for (item of incompleteItems) {
 //   if (checkbox.checked) {
-//     item.completed;
+//     completeItems.appendChild(listItem);
 //   }
 // }
+
+// moving checked items to the Complete List
 
 //adding user input to the ToDo list
 // const userInput = document.querySelector(".form-control");
